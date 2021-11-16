@@ -93,11 +93,12 @@ function draw() {
   
   
   if(gameState === PLAY){
+
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3* score/100)
     
-    if((touches.length>0 || keyDown("SPACE")) && trex.y>=height-50){
-      trex.velocityY = -20;
+    if((touches.length>0 || keyDown("SPACE")) && trex.y>=height-60){
+      trex.velocityY = -30;
       jumpSound.play();
       touches=[];
     }
