@@ -42,7 +42,7 @@ function setup() {
   
  
 
-  trex = createSprite(50,height-250,20,50);
+  trex = createSprite(50,height-70,20,50);
   
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
@@ -50,7 +50,7 @@ function setup() {
 
   trex.scale = 0.5;
   
-  ground = createSprite(width/2,height-45,width,10);
+  ground = createSprite(width/2,height,width,2);
   ground.addImage("ground",groundImage);
   ground.x = width /2;
   //ground.velocityX = -(6 + 3*score/100);
@@ -67,7 +67,7 @@ function setup() {
   gameOver.visible = false;
   restart.visible = false;
   
-  invisibleGround = createSprite(width/2,height-20,width,10);
+  invisibleGround = createSprite(width/2,height-10,width,125);
   invisibleGround.visible = false;
   
   //create Obstacle and Cloud Groups
@@ -161,14 +161,9 @@ function draw() {
      obstaclesGroup.setVelocityXEach(0);
      cloudsGroup.setVelocityXEach(0); 
      
-     //if(mousePressedOver(restart)){
-     //reset();
-     //}
-
-     if(touches.length>0 || keyDown("SPACE") || mousePressedOver(restart)) {      
-      reset();
-      touches = []
-    }
+     if(mousePressedOver(restart)){
+     reset();
+     }
    }
   
  
